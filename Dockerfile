@@ -1,13 +1,13 @@
 FROM node:21
 
-WORKDIR /app
+WORKDIR /src
 
-COPY /package*.json /
+COPY /package*.json .
 
 RUN npm install
 
-COPY src/ .
+COPY . .
 
 EXPOSE 3000
 
-CMD [ "node", "server.js"]
+CMD [ "node", "./src/server.js"]
